@@ -1,0 +1,147 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Todo App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    
+    <link href="index_style.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/services/clients.js"></script> <!-- load our todo service -->
+	<script src="js/services/fmbf.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND TODO COUNT -->
+		<div class="jumbotron text-center">
+			<h1>Banking</h1>
+		</div>
+
+		<div class="userMoney-contianer">
+			<h1>User Balance</h1>
+
+
+			<button type="submit" class="btn btn-primary btn-lg" ng-click="getAccount(client_id)">显示余额</button>
+			<h1 id="test">{{account.balance}}  
+				</h1>
+
+		</div>
+
+
+		<!-- FORM TO CREATE TODOS -->
+		<ul id="myTab" class="nav nav-tabs">
+			<li class="active">
+				<a href="#home" data-toggle="tab">
+					 资金服务
+					</a>
+	
+			<li class="dropdown">
+				<a href="#" id="myTabDrop1" class="dropdown-toggle" 
+		 			  data-toggle="dropdown">理财产品
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+					<li><a href="#Wealth_manage1" tabindex="-1" data-toggle="tab">理财产品1</a></li>
+					<li><a href="#Wealth_manage2" tabindex="-1" data-toggle="tab">理财产品2</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade in active" id="home">
+				  <div>
+                        <div class="tab-1-container">
+                                    
+                            <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
+                            <div class="tab-1-container-1">
+															<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">点击存款</button>
+														
+															<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">点击取款</button>
+							</div>
+							<p></p>
+							<div>
+								<input class="form-control input-lg text-center" type="text" placeholder="accountNumber" width="100px">
+								<input class="form-control input-lg text-center" type="text" placeholder="Transfer amount" width="100px">
+								<div  class="tab-1-container-1">
+									<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">点击转账</button>
+								</div>
+								
+							</div>
+                        </div>
+												<p></p>
+                  </div>
+			</div>
+
+	
+			<div class="tab-pane fade" id="Wealth_manage1">
+				<div>
+	                  <div class="tab-1-container">
+	                         <div class="userMoney-contianer">
+				             		   <h1>已投入</h1><h1 id="test">{{account.wealth}}￥</h1><h1 id="test">获取收益{{account.getwealth}}￥</h1>>
+
+							 </div>
+	                         <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
+	                   </div>
+	                   <div class="tab-1-container-1">
+												<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转入</button>
+												<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转出</button>
+						</div>
+	            </div>
+			</div>
+			<div class="tab-pane fade" id="Wealth_manage2">
+				<div>
+	                  <div class="tab-1-container">
+	                         <div class="userMoney-contianer">
+				             		   <h1>已投入</h1><h1 id="test">{{account.wealth}}￥</h1><h1 id="test">获取收益{{account.getwealth}}￥</h1>>
+
+							 </div>
+	                         <input class="form-control input-lg text-center" type="text" placeholder="accountBalance">
+	                   </div>
+	                   <div class="tab-1-container-1">
+												<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转入</button>
+												<button class="btn btn-primary btn-lg" onclick="window.location.reload('index_2.html');" type="submit" ng-click="createTodo()">转出</button>
+						</div>
+	            </div>
+			</div>
+	    </div>
+	</div>
+
+</body>
+
+</html>
